@@ -22,6 +22,7 @@ RUN apt-get update \
     iputils-ping \
     net-tools \
     x11-apps \
+    ros-noetic-tf2-ros \
  && rm -rf /var/lib/apt/lists/*
 
 # Try to update rosdep (may fail inside some CI environments)
