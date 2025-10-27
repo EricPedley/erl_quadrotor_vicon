@@ -25,10 +25,11 @@ RUN apt-get update \
     ros-noetic-tf2-ros \
     ros-noetic-dynamic-reconfigure \
     ros-noetic-tf \
+    ros-noetic-diagnostic-updater \
+    libeigen3-dev \
  && rm -rf /var/lib/apt/lists/*
 
-# Try to update rosdep (may fail inside some CI environments)
-RUN rosdep update || true
+RUN rosdep init && rosdep update
 
 SHELL ["/bin/bash", "-lc"]
 

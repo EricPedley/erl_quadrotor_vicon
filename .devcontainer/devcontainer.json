@@ -11,7 +11,7 @@
     "DISPLAY": "${localEnv:DISPLAY}",
     "ROS_DISTRO": "noetic"
   },
-  "postCreateCommand": "bash -lc 'source /opt/ros/noetic/setup.bash && mkdir -p /workspace/catkin_ws/src && for p in $(find /workspaces/erl_quadrotor_vicon -maxdepth 2 -name package.xml -printf \"%h\\n\"); do ln -sfn \"$p\" /workspace/catkin_ws/src/$(basename \"$p\"); done && cd /workspace/catkin_ws && catkin_make || true'",
+  "postCreateCommand": "bash -lc 'source /opt/ros/noetic/setup.bash && mkdir -p /workspace/catkin_ws/src && for p in $(find /workspaces/erl_quadrotor_vicon -maxdepth 2 -name package.xml -printf \"%h\\n\"); do ln -sfn \"$p\" /workspace/catkin_ws/src/$(basename \"$p\"); done && cd /workspace/catkin_ws && catkin build'",
   // "remoteUser": "vscode",
   "customizations": {
     "vscode": {
