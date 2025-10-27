@@ -1,0 +1,27 @@
+{
+  "name": "ROS Noetic (catkin) - erl_quadrotor_vicon",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": ["--network=host"],
+  "workspaceFolder": "/workspaces/erl_quadrotor_vicon",
+  "forwardPorts": [11311, 801, 44801],
+  "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "ROS_DISTRO": "noetic"
+  },
+  "postCreateCommand": "bash -lc 'source /opt/ros/noetic/setup.bash && mkdir -p /workspace/catkin_ws/src && for p in $(find /workspaces/erl_quadrotor_vicon -maxdepth 2 -name package.xml -printf \"%h\\n\"); do ln -sfn \"$p\" /workspace/catkin_ws/src/$(basename \"$p\"); done && cd /workspace/catkin_ws && catkin_make || true'",
+  // "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-iot.vscode-ros",
+        "ms-vscode.cpptools"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  }
+}
