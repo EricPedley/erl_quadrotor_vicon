@@ -1,3 +1,7 @@
+Don't need this fork anymore, moved python script to this repo: https://github.com/EricPedley/Atom-JoyStick/tree/main/examples/StampFlyController
+
+# Original Readme
+
 # Overview
 This repository contains a modified version of the [ethz-asl/vicon_bridge](https://github.com/ethz-asl/vicon_bridge) package and [KumarRobotics/vicon](https://github.com/KumarRobotics/vicon) package. The package allows for the integration of Vicon motion capture system with ROS. It provides a ROS interface for Vicon DataStream SDK. This modified version is a work in progress and there may be future changes. Please use with caution. 
 
